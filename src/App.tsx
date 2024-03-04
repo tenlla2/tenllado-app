@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { Table } from "tenllado-lib";
+import useGetDataTable from "./hooks/useGetDataTable";
+import "./App.css";
+import logo from "./assets/logo.png";
+import Modal from "./components/modal/Modal";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () => {
+  const {
+    COLUMNS,
+    dataFixed,
+    paginationConfig,
+    handleCloseDetails,
+    selectedPokemon,
+  } = useGetDataTable();
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app">
+      <img className="pokemon-logo" src={logo} alt="Pokemon Logo" />
+      <div className="pokemon-table-container">
+        <Table
+          columns={COLUMNS}
+          data={dataFixed}
+          tableClassName="pokemon-table"
+          pagination={paginationConfig}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      {selectedPokemon && (
+        <Modal
+          show={selectedPokemon !== null}
+          onClose={handleCloseDetails}
+          data={selectedPokemon}
+        />
+      )}
+    </div>
+  );
+};
 
-export default App
+export default App;
