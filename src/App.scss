@@ -16,10 +16,10 @@ body {
   display: flex;
   flex-direction: column;
   font-family: 'Press Start 2P', sans-serif;
-}
 
-button {
-  font-family: 'Press Start 2P', sans-serif;
+  button {
+    font-family: 'Press Start 2P', sans-serif;
+  }
 }
 
 .app {
@@ -29,18 +29,18 @@ button {
   align-items: center;
   justify-content: center;
   padding: 2rem;
-}
 
-.pokemon-logo {
-  height: 10rem;
-  min-width: 300px;
-}
+  .pokemon-logo {
+    height: 10rem;
+    min-width: 300px;
+  }
 
-.pokemon-table-container {
-  margin-top: 50px;
-  width: 100%;
-  max-width: 600px;
-  overflow-x: auto;
-  position: relative;
-  border-radius: 5px;
+  .pokemon-table-container {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 600px;
+    overflow-x: auto;
+    position: relative;
+    border-radius: 5px;
+  }
 }

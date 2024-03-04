@@ -1,9 +1,9 @@
 import React from "react";
 import { Table } from "tenllado-lib";
-import useGetDataTable from "./hooks/useGetDataTable";
-import "./App.css";
-import logo from "./assets/logo.png";
-import Modal from "./components/modal/Modal";
+import useGetDataTable from "@/hooks/useGetDataTable";
+import "./App.scss";
+import logo from "@/assets/logo.png";
+import Modal from "@/components/modal/Modal";
 
 const App: React.FC = () => {
   const {

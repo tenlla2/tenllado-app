@@ -1,4 +1,4 @@
-import type { PokemonListResponse, PokemonDetail } from '../models/global.model'
+import type { PokemonListResponse, PokemonDetail } from '@/models/global.model'
 
 class PokemonCache {
   private static instance: PokemonCache
