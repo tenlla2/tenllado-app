@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+# ATENLLADO-APP VITE + REACT LIBRARY
+This application uses the custom library 'tenllado-lib' [https://github.com/tenlla2/tenllado-lib](https://github.com/tenlla2/tenllado-lib) to import a table, pagination, and buttons.
+The app is built with Vite, TypeScript, and React. It features a cache system to prevent repeated requests created with a singleton and unit tests with vitest in a jsdom environment. The application consumes the API from [PokeAPI](https://pokeapi.co/api/v2/) through a service with Axios.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live demo: [https://tenlla2.github.io/tenllado-app/](https://tenlla2.github.io/tenllado-app/)
 
-Currently, two official plugins are available:
+## Installation and Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Project Installation
+Node version: v21.6.2
+Yarn version: 1.22.21
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```shell
+# Install
+yarn install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Usage
+
+### Run development environment
+```
+yarn dev
+```
+### Run unit tests
+```
+yarn test
+```
