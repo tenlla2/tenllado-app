@@ -21,4 +21,5 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['src/setupTest.ts'],
   },
+  base: 'tenllado-app/',
 })
