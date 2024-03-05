@@ -55,6 +55,7 @@ const Modal: React.FC<ModalProps> = ({ show, onClose, data }) => {
                 console.error('Error:', error)
               })
             }}
+            data-testid="pokemon-image"
           />
           <div onClick={toggleImageVariant} className="modal-overlay__big-circle-transparent" />
         </>
