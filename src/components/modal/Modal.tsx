@@ -1,5 +1,5 @@
 import { useEffect, useCallback } from 'react'
-import type { Pokemon, PokemonAbilities, PokemonType, PokemonStat } from '@/models/global.model'
+import type { Pokemon, PokemonAbilities, PokemonType, PokemonStat } from '../../models/global.model'
 import './Modal.scss'
 import usePokemonDetails from '@/hooks/usePokemonDatails'
 import closeIcon from '@/assets/close.svg'
