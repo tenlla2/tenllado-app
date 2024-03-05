@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.754); /* Fondo semi-transparente */
+  background-color: var(--semi-transparent-bg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,12 +15,12 @@
     width: 425px;
     height: 683px;
     background: url('../../assets/pokedex.png');
-    background-color: rgba(0, 0, 0, 0.5);
-    background-position: center; /* Centra la imagen */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+    background-color: var(--semi-transparent-bg-lighter);
+    background-position: center;
+    background-size: cover;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 
     &--image {
       position: absolute;
@@ -36,10 +36,10 @@
       right: 10px;
       cursor: pointer;
       padding: 5px;
-      background-color: white;
+      background-color: var(--white);
       text-align: center;
-      border-radius: 50%; /* Hace que el fondo del icono sea redondeado */
-      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* Añade una sombra alrededor del icono */
+      border-radius: 50%;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
     }
 
     &--name {
@@ -51,22 +51,22 @@
 
       h2 {
         text-align: center;
-        margin: 0; /* Elimina el margen del h2 para centrarlo completamente */
+        margin: 0;
         font-size: 30px;
         text-transform: uppercase;
-        background: #e3e3e3;
-        padding: 20px; /* 20px de relleno vertical y 0 de relleno horizontal */
+        background: var(--light-gray);
+        padding: 20px;
       }
     }
 
     &--number {
       border-radius: 12px;
-      background: #e3e3e3;
+      background: var(--light-gray);
       padding: 0.5rem;
       position: absolute;
       top: 13%;
       right: 20%;
-      color: #e00540;
+      color: var(--red);
       font-size: 26px;
     }
 
@@ -80,11 +80,11 @@
 
       &__button {
         &--active {
-          background-color: #e00540; /* Color when active */
+          background-color: var(--red);
         }
       }
       :hover {
-        background-color: #e00540; /* Color when active */
+        background-color: var(--red);
       }
     }
 
@@ -104,7 +104,7 @@
     height: 68px;
     left: 39px;
     top: 21px;
-    background-color: #11ebf7;
+    background-color: var(--cyan);
     border-radius: 50%;
     animation: pulse 0.2s infinite;
   }
@@ -129,21 +129,21 @@
     &--first {
       left: 125px;
       top: 13px;
-      background-color: #e7021a;
+      background-color: var(--dark-red);
       border-radius: 50%;
     }
 
     &--second {
       left: 163px;
       top: 13px;
-      background-color: #e8f25e;
+      background-color: var(--yellow);
       border-radius: 50%;
     }
 
     &--third {
       left: 200px;
       top: 13px;
-      background-color: #8ff05a;
+      background-color: var(--green);
       border-radius: 50%;
     }
   }
@@ -157,14 +157,14 @@
     &--first {
       left: 187px;
       top: 169px;
-      background-color: #dd0741;
+      background-color: var(--pink);
       border-radius: 50%;
     }
 
     &--second {
       left: 222px;
       top: 169px;
-      background-color: #e7021a;
+      background-color: var(--dark-red);
       border-radius: 50%;
     }
   }
@@ -190,19 +190,19 @@
     background-color: transparent;
   }
   100% {
-    background-color: #11ebf7;
+    background-color: var(--cyan);
   }
 }
 
 @keyframes pulse {
   0% {
-    opacity: 1; /* Opacidad completa */
+    opacity: 1;
   }
   50% {
-    opacity: 0; /* Opacidad reducida */
+    opacity: 0;
   }
   100% {
-    opacity: 1; /* Opacidad completa */
+    opacity: 1;
   }
 }
 
@@ -217,18 +217,18 @@
 
 @keyframes shake {
   0% {
-    transform: rotate(7deg) translateX(-2px); /* Empieza con una ligera rotación a la derecha y un pequeño desplazamiento a la izquierda */
+    transform: rotate(7deg) translateX(-2px);
   }
   25% {
-    transform: rotate(0deg) translateX(2px); /* Rotación a cero y desplazamiento hacia la derecha */
+    transform: rotate(0deg) translateX(2px);
   }
   50% {
-    transform: rotate(-7deg) translateX(-2px); /* Rotación a la izquierda y desplazamiento hacia la izquierda */
+    transform: rotate(-7deg) translateX(-2px);
   }
   75% {
-    transform: rotate(0deg) translateX(2px); /* Rotación a cero y desplazamiento hacia la derecha */
+    transform: rotate(0deg) translateX(2px);
   }
   100% {
-    transform: rotate(7deg) translateX(-2px); /* Rotación a la derecha y desplazamiento hacia la izquierda */
+    transform: rotate(7deg) translateX(-2px);
   }
 }
