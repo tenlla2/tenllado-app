@@ -1,47 +1,44 @@
-name: Publish to npm
+name: Deploy to Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: ['main']
 
   workflow_dispatch:
-    inputs:
-      version:
-        description: New version
-        required: true
-        default: 'patch'
-        type: choice
-        options:
-          - patch
-          - minor
-          - major
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
 
 jobs:
-  version_and_publish:
-    name: Generate and publish to npm
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v3
         with:
-          ref: main
-          
-      - run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-      - name: Use Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18.x'
-          registry-url: https://registry.npmjs.org/
-
+          node-version: 18
+          cache: 'npm'
       - name: Install dependencies
-        run: yarn
-        
-      - name: Launch testing
-        run: yarn test
-  
+        run: npm install
       - name: Build
-        run: yarn build
-        
+        run: npm run build
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: './dist'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
