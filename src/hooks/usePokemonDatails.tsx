@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from 'react'
-import type { PokemonDetail } from '@/models/global.model.ts'
+import type { PokemonDetail } from '@/models/global.model'
 import pokemonAPIService from '../service/apiService'
 import PokemonCache from '../helpers/cache'
 

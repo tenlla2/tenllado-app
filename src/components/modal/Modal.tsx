@@ -4,7 +4,7 @@ import type {
   PokemonAbilities,
   PokemonType,
   PokemonStat,
-} from '@/models/global.model.ts'
+} from '@/models/global.model'
 import './Modal.scss'
 import usePokemonDetails from '@/hooks/usePokemonDatails'
 import closeIcon from '@/assets/close.svg'
