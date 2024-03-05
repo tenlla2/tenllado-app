@@ -1,58 +1,23 @@
-name: Publish to Netlify
+name: CI
+
 on:
   push:
     branches:
       - main
 
 jobs:
-  dependencies:
-    name: Install dependencies
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js and Yarn
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          registry-url: https://registry.yarnpkg.com/
-
-      - name: Install dependencies
-        run: yarn install
-
   build:
-    name: Build
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Install dependencies
+      run: npm install  # Esto depende del gestor de paquetes que uses
 
-      - name: Set up Node.js and Yarn
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          registry-url: https://registry.yarnpkg.com/
+    - name: Run tests
+      run: npm test  # Esto depende de cómo ejecutes tus pruebas
 
-      - name: Install dependencies
-        run: yarn install
-
-      - name: Build project
-        run: yarn build
-
-  deploy:
-    name: Deploy to Netlify
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Install Netlify CLI
-        run: yarn global add netlify-cli
-
-      - name: Log in to Netlify
-        run: netlify login -i
-
-      - name: Deploy to Netlify
-        run: netlify deploy --prod --auth ${{ secrets.NETLIFY_AUTH_TOKEN }}
+    - name: Build
+      run: npm run build  # Esto depende de cómo construyas tu aplicación
