@@ -1,4 +1,4 @@
-import type { ModifiedPokemon, PaginationReturn, Pokemon } from '@/models/global.model'
+import type { ModifiedPokemon, PaginationReturn, Pokemon } from '../models/global.model'
 
 export function modifyPokemonForTable(
   pokemon: Pokemon,

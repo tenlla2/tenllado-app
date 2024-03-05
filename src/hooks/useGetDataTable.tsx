@@ -7,9 +7,9 @@ import {
   type SetStateAction,
 } from 'react'
 import pokemonAPIService from '@/service/apiService'
-import { modifyPokemonForTable, pagination, COLUMNS } from '@/helpers/table'
-import type { ModifiedPokemon, PaginationReturn, Pokemon } from '@/models/global.model'
-import PokemonCache from '@/helpers/cache'
+import { modifyPokemonForTable, pagination, COLUMNS } from '../helpers/table'
+import type { ModifiedPokemon, PaginationReturn, Pokemon } from '../models/global.model'
+import PokemonCache from '../helpers/cache'
 
 interface UseGetDataTableReturn {
   dataFixed: ModifiedPokemon[]
