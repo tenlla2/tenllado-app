@@ -11,8 +11,7 @@
     "format": "prettier --write src//**/*.{ts,tsx,scss} --config ./.prettierrc",
     "preview": "vite preview --port 4334",
     "prepare": "husky",
-    "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "test": "vitest"
   },
   "dependencies": {
     "axios": "^1.6.7",
