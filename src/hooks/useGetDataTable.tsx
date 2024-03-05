@@ -8,7 +8,7 @@ import {
 } from 'react'
 import pokemonAPIService from '@/service/apiService'
 import { modifyPokemonForTable, pagination, COLUMNS } from '../helpers/table'
-import type { ModifiedPokemon, PaginationReturn, Pokemon } from '../models/global.model'
+import type { ModifiedPokemon, PaginationReturn, Pokemon } from '@/models/global.model.ts'
 import PokemonCache from '../helpers/cache'
 
 interface UseGetDataTableReturn {

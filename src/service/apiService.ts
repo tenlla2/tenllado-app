@@ -1,5 +1,5 @@
 import axios, { type AxiosInstance } from 'axios'
-import type { Pokemon, PokemonDetail, PokemonListResponse } from '../models/global.model'
+import type { Pokemon, PokemonDetail, PokemonListResponse } from '@/models/global.model.ts'
 
 class PokemonAPIService {
   private api: AxiosInstance
